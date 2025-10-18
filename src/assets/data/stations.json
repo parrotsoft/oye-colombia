@@ -135,7 +135,7 @@
     "name": "Paisa Estéreo",
     "logo": "https://cdn.instant.audio/images/logos/radios-com-co/paisa-estereo.png",
     "api": "https://api.instant.audio/data/streams/11/paisa-estereo",
-    "stream": "https://radiolatina.info/7094/"
+    "stream": "https://radiolatina.info/7094/;"
   },
   {
     "name": "Mix Radio Bogotá",
