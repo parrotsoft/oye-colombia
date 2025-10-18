@@ -1,4 +1,4 @@
-import { Component, signal, OnInit } from '@angular/core';
+import { Component, signal, OnInit, ChangeDetectorRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { StationCardComponent } from "./components/station-card-component/station-card-component";
 import { HttpClient } from '@angular/common/http';
@@ -15,11 +15,14 @@ export class App {
 
   protected readonly title = signal('oye-colombia');
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
     this.http.get<Station[]>('assets/data/stations.json').subscribe({
-      next: (data) => (this.stations = data),
+      next: (data) => {
+        this.stations = data;
+        this.cdr.detectChanges();
+      },
       error: (err) => console.log('Error al cargar las emisoras:', err)
     })
   }
