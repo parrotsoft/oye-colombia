@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -21,7 +21,7 @@ jobs:
         run: npm ci
 
       - name: Build App
-        run: npm run build -- --configuration production --output-path dist
+        run: npm run build -- --configuration production --base-href "/oye-colombia/" --output-path dist/oye-colombia/browser
       
       - name: Deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v4
