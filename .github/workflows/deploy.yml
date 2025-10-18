@@ -21,7 +21,7 @@ jobs:
         run: npm ci
 
       - name: Build App
-        run: npx ng build --configuration production --base-href /oye-colombia/
+        run: npx ng build --configuration production --base-href /
       
       - name: Deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v4
