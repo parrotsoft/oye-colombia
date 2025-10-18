@@ -47,6 +47,12 @@ Ejecutar pruebas end-to-end:
 ng e2e
 ```
 
+## Docker
+Construir imagen:
+```sh
+docker build -t oye-colombia:latest .
+```
+
 ## Archivos importantes
 - App principal: `src/app/app.ts`
 - Componentes: `src/app/components/`
