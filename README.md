@@ -1,59 +1,60 @@
 # OyeColombia
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.2.
+Aplicación Angular para listar y reproducir emisoras de radio de Colombia.
 
-## Development server
+## Requisitos
+- Node.js (versión compatible con Angular CLI instalada)
+- Angular CLI (instalado globalmente): ng
 
-To start a local development server, run:
+## Instalación
+Desde la raíz del proyecto:
+```sh
+npm install
+```
 
-```bash
+(Instalación de dependencias necesaria una sola vez; los comandos de ejecución abajo usan `ng`.)
+
+## Servidor de desarrollo
+Iniciar servidor con recarga en caliente:
+```sh
 ng serve
 ```
+Abrir: http://localhost:4200
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Si obtienes 404 al cargar assets (por ejemplo `assets/data/stations.json`), verifica que el archivo exista en `src/assets/data/` y que `angular.json` incluya `"src/assets"` en la propiedad `assets`. Reinicia `ng serve` después de añadir archivos.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+## Generar código
+Crear un componente:
+```sh
+ng generate component ruta/nombre-componente
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+## Construcción (producción)
+Generar build optimizado:
+```sh
+ng build --configuration production
 ```
+Los archivos generados quedan en `dist/`.
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
+## Tests
+Ejecutar tests unitarios:
+```sh
 ng test
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
+Ejecutar pruebas end-to-end:
+```sh
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Archivos importantes
+- App principal: `src/app/app.ts`
+- Componentes: `src/app/components/`
+- Contratos / modelos: `src/app/contracts/`
+- Datos locales: `src/assets/data/stations.json`
+- Configuración del CLI: `angular.json`
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Notas
+- Usar comandos `ng` para desarrollo y construcción.
+- Reiniciar el servidor de desarrollo tras cambios en `angular.json` o al añadir nuevos archivos en `src/assets`.
+- Contribuciones y mejoras bienvenidas.

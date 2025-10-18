@@ -1,0 +1,260 @@
+[
+  {
+    "name": "Caracol En Vivo",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/caracol-en-vivo.png",
+    "api": "https://api.instant.audio/data/streams/11/caracol-en-vivo",
+    "stream": "https://playerservices.streamtheworld.com/api/livestream-redirect/CARACOL_RADIOAAC_SC"
+  },
+  {
+    "name": "Radioactiva",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/radioactiva.png",
+    "api": "https://api.instant.audio/data/streams/11/radioactiva",
+    "stream": "https://playerservices.streamtheworld.com/pls/RADIO_ACTIVA.pls"
+  },
+  {
+    "name": "RCN",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/rcn.png",
+    "api": "https://api.instant.audio/data/streams/11/rcn",
+    "stream": "https://mdstrm.com/audio/627c1c39637d89088290f64d/live.m3u8"
+  },
+  {
+    "name": "El Sol",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/el-sol.png",
+    "api": "https://api.instant.audio/data/streams/11/el-sol",
+    "stream": "https://mdstrm.com/audio/632c9b89aa9ace684913b815/live.m3u8"
+  },
+  {
+    "name": "Los 40 Urban Bogotá",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/los-40-urban-bogota.png",
+    "api": "https://api.instant.audio/data/streams/11/los-40-urban-bogota",
+    "stream": "https://playerservices.streamtheworld.com/pls/LOS40_COLOMBIAAAC.pls"
+  },
+  {
+    "name": "W Radio",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/w-radio.png",
+    "api": "https://api.instant.audio/data/streams/11/w-radio",
+    "stream": "https://playerservices.streamtheworld.com/pls/WRADIO.pls"
+  },
+  {
+    "name": "La Mega",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/la-mega.png",
+    "api": "https://api.instant.audio/data/streams/11/la-mega",
+    "stream": "https://mdstrm.com/audio/632c9ae6660fef03fe3855fe/live.m3u8"
+  },
+  {
+    "name": "Uno",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/uno.png",
+    "api": "https://api.instant.audio/data/streams/11/uno",
+    "stream": "https://mdstrm.com/audio/632c9bbcaa9ace684913b81b/live.m3u8"
+  },
+  {
+    "name": "La FM",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/la-fm.png",
+    "api": "https://api.instant.audio/data/streams/11/la-fm",
+    "stream": "https://us-b4-p-e-cg11-audio.cdn.mdstrm.com/live-audio/6271a4d5d206c3172f3c9a9c/632c9b23d1dcd7027f32f7fe/chunks.m3u8"
+  },
+  {
+    "name": "Principales",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/principales.png",
+    "api": "https://api.instant.audio/data/streams/11/principales",
+    "stream": "https://playerservices.streamtheworld.com/pls/LOS40_COLOMBIAAAC.pls"
+  },
+  {
+    "name": "Vibra",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/vibra.png",
+    "api": "https://api.instant.audio/data/streams/11/vibra",
+    "stream": "https://playerservices.streamtheworld.com/pls/VIBRA.pls"
+  },
+  {
+    "name": "Tropicana",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/tropicana.png",
+    "api": "https://api.instant.audio/data/streams/11/tropicana",
+    "stream": "https://playerservices.streamtheworld.com/pls/TROPICANA.pls"
+  },
+  {
+    "name": "Rumba Santa Marta",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/rumba-santa-marta.png",
+    "api": "https://api.instant.audio/data/streams/11/rumba-santa-marta",
+    "stream": "https://mdstrm.com/audio/632ce8986d2e8108b23d249f/live.m3u8"
+  },
+  {
+    "name": "Fantástica",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/fantastica.png",
+    "api": "https://api.instant.audio/data/streams/11/fantastica",
+    "stream": "https://mdstrm.com/audio/632c9c1cbc02c60329991efa/live.m3u8"
+  },
+  {
+    "name": "Olímpica",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/olimpica.png",
+    "api": "https://api.instant.audio/data/streams/11/olimpica",
+    "stream": "https://playerservices.streamtheworld.com/pls/OLP_BOGOTAAAC.pls"
+  },
+  {
+    "name": "La X",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/la-x.png",
+    "api": "https://api.instant.audio/data/streams/11/la-x",
+    "stream": "https://s5.radio.co/s980fc5249/listen.m3u"
+  },
+  {
+    "name": "Bésame",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/besame.png",
+    "api": "https://api.instant.audio/data/streams/11/besame",
+    "stream": "https://playerservices.streamtheworld.com/pls/BESAME_MEDELLINAAC.pls"
+  },
+  {
+    "name": "Candela",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/candela.png",
+    "api": "https://api.instant.audio/data/streams/11/candela",
+    "stream": "https://playerservices.streamtheworld.com/pls/CANDELAESTEREO.pls"
+  },
+  {
+    "name": "Estrella Medellín",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/estrella-medellin.png",
+    "api": "https://api.instant.audio/data/streams/11/estrella-medellin",
+    "stream": "http://audio.estrellacolombia.com:8006/listen.pls?sid=1"
+  },
+  {
+    "name": "Minuto Bogotá",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/minuto-bogota.png",
+    "api": "https://api.instant.audio/data/streams/11/minuto-bogota",
+    "stream": "http://sp4.colombiatelecom.com.co:8002/stream.m3u"
+  },
+  {
+    "name": "Radiónica",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/radionica.png",
+    "api": "https://api.instant.audio/data/streams/11/radionica",
+    "stream": "https://www.radionica.rocks/en-vivo/audio/bogota"
+  },
+  {
+    "name": "IPUC",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/ipuc.png",
+    "api": "https://api.instant.audio/data/streams/11/ipuc",
+    "stream": "http://play14.tikast.com:8826/listen.pls?sid=1"
+  },
+  {
+    "name": "Paisa Estéreo",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/paisa-estereo.png",
+    "api": "https://api.instant.audio/data/streams/11/paisa-estereo",
+    "stream": "http://radiolatina.info:7087/listen.pls"
+  },
+  {
+    "name": "Mix Radio Bogotá",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/mix-radio-bogota.png",
+    "api": "https://api.instant.audio/data/streams/11/mix-radio-bogota",
+    "stream": "https://playerservices.streamtheworld.com/pls/MIX_BOGOTAAAC.pls"
+  },
+  {
+    "name": "Fantástica Bogotá 104.4",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/fantastica-bogota-104-4.png",
+    "api": "https://api.instant.audio/data/streams/11/fantastica-bogota-104-4",
+    "stream": "https://mdstrm.com/audio/632c9c1cbc02c60329991efa/live.m3u8"
+  },
+  {
+    "name": "BMOR Medellín",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/bmor-medellin.png",
+    "api": "https://api.instant.audio/data/streams/11/bmor-medellin",
+    "stream": "http://streamingmediaradio.live:8086/listen.pls?sid=1"
+  },
+  {
+    "name": "María",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/maria.png",
+    "api": "https://api.instant.audio/data/streams/11/maria",
+    "stream": "http://149.202.69.190:8100/listen.pls?sid=1"
+  },
+  {
+    "name": "Latina",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/latina.png",
+    "api": "https://api.instant.audio/data/streams/11/latina",
+    "stream": "http://stream.latinastereo.com:8000/listen.pls?sid=1"
+  },
+  {
+    "name": "Cristal Medellín",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/cristal-medellin.png",
+    "api": "https://api.instant.audio/data/streams/11/cristal-medellin",
+    "stream": "https://mdstrm.com/audio/632cb55bb4ced508985f3ef8/live.m3u8"
+  },
+  {
+    "name": "Vida AM",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/vida-am.png",
+    "api": "https://api.instant.audio/data/streams/11/vida-am",
+    "stream": "https://playerservices.streamtheworld.com/pls/VIDA_BOGOTA.pls"
+  },
+  {
+    "name": "Energía",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/energia.png",
+    "api": "https://api.instant.audio/data/streams/11/energia",
+    "stream": "http://audio2.energia1025.com:8000/listen.pls?sid=1"
+  },
+  {
+    "name": "Tiempo Medellín",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/tiempo-medellin.png",
+    "api": "https://api.instant.audio/data/streams/11/tiempo-medellin",
+    "stream": "https://playerservices.streamtheworld.com/pls/RT_MEDELLINAAC.pls"
+  },
+  {
+    "name": "Barranquilla Estéreo",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/barranquilla-estereo.png",
+    "api": "https://api.instant.audio/data/streams/11/barranquilla-estereo",
+    "stream": "http://radio.yaservers.com:6060/listen.pls?sid=1"
+  },
+  {
+    "name": "Verdad y Vida Medellín",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/verdad-y-vida-medellin.png",
+    "api": "https://api.instant.audio/data/streams/11/verdad-y-vida-medellin",
+    "stream": "https://stream.zeno.fm/zznllllp06cuv.m3u"
+  },
+  {
+    "name": "Boom FM",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/boom-fm.png",
+    "api": "https://api.instant.audio/data/streams/11/boom-fm",
+    "stream": "https://streamming.dobitsoluciones.com/livestream/1"
+  },
+  {
+    "name": "Reina",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/reina.png",
+    "api": "https://api.instant.audio/data/streams/11/reina",
+    "stream": "https://playerservices.streamtheworld.com/pls/RNA_BARRANQUILLA.pls"
+  },
+  {
+    "name": "Cacica Valledupar",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/cacica-valledupar.png",
+    "api": "https://api.instant.audio/data/streams/11/cacica-valledupar",
+    "stream": "http://sonic.paulatina.co:7062/listen.pls?sid=1"
+  },
+  {
+    "name": "Melodía",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/melodia.png",
+    "api": "https://api.instant.audio/data/streams/11/melodia",
+    "stream": "https://r90.letio.com/io/?gs=7000&type=master.m3u8"
+  },
+  {
+    "name": "Pachanguera",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/pachanguera.png",
+    "api": "https://api.instant.audio/data/streams/11/pachanguera",
+    "stream": "http://radiolatina.info:8772/listen.pls?sid=1"
+  },
+  {
+    "name": "La Cariñosa",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/la-carinosa.png",
+    "api": "https://api.instant.audio/data/streams/11/la-carinosa",
+    "stream": "https://mdstrm.com/audio/627c1c39637d89088290f64d/live.m3u8"
+  },
+  {
+    "name": "Antena Bogotá",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/antena-bogota.png",
+    "api": "https://api.instant.audio/data/streams/11/antena-bogota",
+    "stream": "https://mdstrm.com/audio/632c9b439234f869e9a50e2b/live.m3u8"
+  },
+  {
+    "name": "Vallenato",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/vallenato.png",
+    "api": "https://api.instant.audio/data/streams/11/vallenato",
+    "stream": "http://radiolatina.info:7087/listen.pls"
+  },
+  {
+    "name": "Voz Bogotá",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/voz-bogota.png",
+    "api": "https://api.instant.audio/data/streams/11/voz-bogota",
+    "stream": "http://tupanel.info:7002/listen.pls?sid=1"
+  }
+]
