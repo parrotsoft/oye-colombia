@@ -9,7 +9,7 @@
     "name": "Radioactiva",
     "logo": "https://cdn.instant.audio/images/logos/radios-com-co/radioactiva.png",
     "api": "https://api.instant.audio/data/streams/11/radioactiva",
-    "stream": "https://playerservices.streamtheworld.com/pls/RADIO_ACTIVA.pls"
+    "stream": "https://playerservices.streamtheworld.com/api/livestream-redirect/RADIO_ACTIVA_SC"
   },
   {
     "name": "RCN",
