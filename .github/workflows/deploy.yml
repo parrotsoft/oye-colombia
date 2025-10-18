@@ -21,10 +21,10 @@ jobs:
         run: npm ci
 
       - name: Build App
-        run: npm run build -- --configuration production --base-href /${{ github.event.repository.name }}/
+        run: npx ng build --configuration production --base-href /oye-colombia/
       
       - name: Deploy to Github Pages
-        uses: angular-schule/angular-cli-ghpages@v2
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist/oye-colombia/browser
+          publish_dir: ./dist/oye-colombia/browser
