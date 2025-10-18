@@ -1,7 +1,12 @@
-<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 p-4">
-  @for (station of stations; track $index) {
-  <app-station-card-component [station]="station"></app-station-card-component>
-  }
+<div>
+  <H1>Donde suena lo nuestro</H1>
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 p-4">
+    @for (station of stations; track $index) {
+    <app-station-card-component [station]="station"></app-station-card-component>
+    }
+  </div>
 </div>
 
+<!--
 <router-outlet />
+-->
