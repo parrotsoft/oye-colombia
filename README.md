@@ -2,65 +2,119 @@
 
 Aplicación Angular para listar y reproducir emisoras de radio de Colombia.
 
+## Tecnologías
+- Angular 20
+- RxJS
+- Tailwind (via PostCSS)
+- Docker + Nginx para despliegue estático
+
 ## Requisitos
-- Node.js (versión compatible con Angular CLI instalada)
-- Angular CLI (instalado globalmente): ng
+- Node.js 18+ (recomendado 20, coincide con imagen del Dockerfile)
+- npm (incluido con Node)
+- (Opcional) Angular CLI global si quieres usar `ng` directamente
+
+```sh
+npm install -g @angular/cli
+```
 
 ## Instalación
-Desde la raíz del proyecto:
+En la raíz del proyecto:
 ```sh
 npm install
 ```
+Esto instala dependencias una sola vez.
 
-(Instalación de dependencias necesaria una sola vez; los comandos de ejecución abajo usan `ng`.)
+## Scripts principales
+Puedes usar `ng` o los scripts definidos en `package.json`.
 
-## Servidor de desarrollo
-Iniciar servidor con recarga en caliente:
+```sh
+npm start        # equivale a ng serve (configuración development)
+npm run build    # build (configuración por defecto production)
+npm test         # tests unitarios con Karma/Jasmine
+```
+
+También puedes invocar directamente:
 ```sh
 ng serve
+ng build --configuration production
+ng test
+```
+
+## Desarrollo
+Levantar servidor con recarga en caliente:
+```sh
+npm start
 ```
 Abrir: http://localhost:4200
 
-Si obtienes 404 al cargar assets (por ejemplo `assets/data/stations.json`), verifica que el archivo exista en `src/assets/data/` y que `angular.json` incluya `"src/assets"` en la propiedad `assets`. Reinicia `ng serve` después de añadir archivos.
+Si ves errores 404 cargando assets (ej: `assets/data/stations.json`):
+1. Verifica que exista en `src/assets/data/`.
+2. Confirma que `angular.json` incluye `"src/assets"` dentro de `assets`.
+3. Reinicia el servidor (`Ctrl+C` y `npm start`).
 
-## Generar código
+## Generar código (schematics)
 Crear un componente:
 ```sh
 ng generate component ruta/nombre-componente
 ```
+Ejemplo:
+```sh
+ng generate component components/station-card-component
+```
 
-## Construcción (producción)
-Generar build optimizado:
+## Build de producción
+Generar build optimizado (hashing + budgets):
 ```sh
 ng build --configuration production
 ```
-Los archivos generados quedan en `dist/`.
+Los artefactos quedan en `dist/oye-colombia/browser/` (ruta usada por el Dockerfile).
 
-## Tests
+Nota: El Dockerfile usa `npm run build --prod`. La bandera `--prod` es un alias histórico que activa la configuración de producción; mantenerlo no implica riesgo, pero puedes modernizar a `npm run build -- --configuration production` en el futuro si deseas.
+
+## Pruebas
 Ejecutar tests unitarios:
 ```sh
-ng test
+npm test
 ```
+(No hay configuración de pruebas end-to-end en este proyecto actualmente, por eso se omite.)
 
-Ejecutar pruebas end-to-end:
-```sh
-ng e2e
-```
-
-## Docker
-Construir imagen:
+## Docker (despliegue estático)
+Construir la imagen multi-stage (Angular build + Nginx):
 ```sh
 docker build -t oye-colombia:latest .
 ```
+Ejecutar el contenedor:
+```sh
+docker run --rm -p 8080:80 oye-colombia:latest
+```
+Abrir: http://localhost:8080
 
-## Archivos importantes
-- App principal: `src/app/app.ts`
+La configuración de Nginx (`nginx.conf`) hace fallback a `index.html` para rutas internas (SPA) y aplica caché básica a assets estáticos.
+
+## Estructura clave
+- Entrada aplicación: `src/main.ts`
+- Componente raíz: `src/app/app.ts`
 - Componentes: `src/app/components/`
 - Contratos / modelos: `src/app/contracts/`
 - Datos locales: `src/assets/data/stations.json`
-- Configuración del CLI: `angular.json`
+- Configuración Angular CLI: `angular.json`
+- Configuración servidor estático: `nginx.conf`
+- Docker multi-stage: `Dockerfile`
 
-## Notas
-- Usar comandos `ng` para desarrollo y construcción.
-- Reiniciar el servidor de desarrollo tras cambios en `angular.json` o al añadir nuevos archivos en `src/assets`.
-- Contribuciones y mejoras bienvenidas.
+## Contribuir
+PRs pequeños y enfocados son bienvenidos. Recomendaciones:
+1. Crear rama descriptiva (`feat/x`, `fix/y`).
+2. Ejecutar `npm test` antes de abrir el PR.
+3. Mantener cambios mínimos (evitar formateos masivos no relacionados).
+
+## Checklist rápida antes de abrir PR
+- [ ] Compila: `ng build`
+- [ ] Tests unitarios pasan: `npm test`
+- [ ] Sin archivos grandes o sensibles añadidos
+- [ ] README actualizado si aplica
+
+## Licencia
+(Si deseas definir una licencia, añade el archivo LICENSE. Actualmente no se especifica.)
+
+---
+Mantener este README conciso y libre de pasos innecesarios reduce fricción para contribuir.
