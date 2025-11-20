@@ -5,6 +5,7 @@ Aplicación Angular para listar y reproducir emisoras de radio de Colombia.
 ## Requisitos
 - Node.js (versión compatible con Angular CLI instalada)
 - Angular CLI (instalado globalmente): ng
+- Docker (para construir y ejecutar la imagen)
 
 ## Instalación
 Desde la raíz del proyecto:
@@ -48,9 +49,51 @@ ng e2e
 ```
 
 ## Docker
-Construir imagen:
+### Estructura del Dockerfile
+Se usa multi-stage build:
+1. Stage `builder`: instala dependencias y genera el build de producción (`dist/oye-colombia/browser`).
+2. Stage `runner`: imagen base `nginx` que sirve los archivos estáticos.
+
+### Construir imagen
 ```sh
 docker build -t oye-colombia:latest .
+```
+
+Si ves error de permisos ("permission denied" al conectar con `/var/run/docker.sock`), añade tu usuario al grupo docker:
+```sh
+sudo usermod -aG docker $USER
+# Cierra sesión y vuelve a entrar (o reinicia) para aplicar el cambio.
+```
+Verifica:
+```sh
+groups $USER
+```
+Debe incluir `docker`.
+
+### Ejecutar contenedor
+Modo foreground (Ctrl+C para parar):
+```sh
+docker run --rm -p 8080:80 oye-colombia:latest
+```
+Abrir: http://localhost:8080
+
+Modo detach:
+```sh
+docker run -d --name oye-colombia -p 8080:80 oye-colombia:latest
+```
+Logs:
+```sh
+docker logs -f oye-colombia
+```
+Parar y eliminar:
+```sh
+docker stop oye-colombia && docker rm oye-colombia
+```
+
+### Reconstruir tras cambios
+Si modificas código fuente:
+```sh
+docker build --no-cache -t oye-colombia:latest .
 ```
 
 ## Archivos importantes
@@ -59,6 +102,8 @@ docker build -t oye-colombia:latest .
 - Contratos / modelos: `src/app/contracts/`
 - Datos locales: `src/assets/data/stations.json`
 - Configuración del CLI: `angular.json`
+- Configuración de Nginx (contenedor): `nginx.conf`
+- Dockerfile multi-stage: `Dockerfile`
 
 ## Notas
 - Usar comandos `ng` para desarrollo y construcción.
