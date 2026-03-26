@@ -18,6 +18,12 @@
     "stream": "https://mdstrm.com/audio/627c1c39637d89088290f64d/live.m3u8"
   },
   {
+    "name": "La Triple A Radio",
+    "logo": "https://latriplearadio.com/assets/img/logo.png",
+    "api": "https://api.instant.audio/data/streams/11/rcn",
+    "stream": "https://play14.tikast.com:22079/;"
+  },
+  {
     "name": "El Sol",
     "logo": "https://cdn.instant.audio/images/logos/radios-com-co/el-sol.png",
     "api": "https://api.instant.audio/data/streams/11/el-sol",
