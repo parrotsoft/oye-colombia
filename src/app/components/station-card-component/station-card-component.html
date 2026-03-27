@@ -1,20 +1,27 @@
 <div
-    class="group relative flex flex-col items-center justify-between rounded-2xl bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl">
-    <div class="flex flex-col items-center space-y-3">
-        <div class="flex h-28 w-28 items-center justify-center overflow-hidden rounded-full bg-gray-100 shadow-inner">
-            <img [src]="station()?.logo" [alt]="station()?.name"
-                class="h-24 w-24 object-contain transition-transform duration-300 group-hover:scale-110" />
-        </div>
-
-        <p
-            class="text-center text-lg font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors duration-300">
-            {{ station()?.name }}
-        </p>
-    </div>
-
-    <audio controls [src]="station()?.stream" class="mt-4 w-full accent-indigo-600"></audio>
-
+  class="group relative flex flex-col items-center justify-between rounded-2xl bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+>
+  <div class="flex flex-col items-center space-y-3">
     <div
-        class="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-tr from-indigo-200/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+      class="flex h-28 w-28 items-center justify-center overflow-hidden rounded-full bg-gray-100 shadow-inner"
+    >
+      <img
+        [src]="station()?.logo"
+        [alt]="station()?.name"
+        class="h-24 w-24 object-contain transition-transform duration-300 group-hover:scale-110"
+      />
     </div>
+
+    <p
+      class="text-center text-lg font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors duration-300"
+    >
+      {{ station()?.name }}
+    </p>
+  </div>
+
+  <audio controls [src]="station()?.stream" class="mt-4 w-full accent-indigo-600"></audio>
+
+  <div
+    class="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-tr from-indigo-200/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+  ></div>
 </div>
