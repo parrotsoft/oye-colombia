@@ -9,20 +9,15 @@ Aplicación Angular para listar y reproducir emisoras de radio de Colombia.
 - Docker + Nginx para despliegue estático
 
 ## Requisitos
-- Node.js 18+ (recomendado 20, coincide con imagen del Dockerfile)
-- npm (incluido con Node)
-- (Opcional) Angular CLI global si quieres usar `ng` directamente
-
-```sh
-npm install -g @angular/cli
-```
+- Node.js (versión compatible con Angular CLI instalada)
+- Angular CLI (instalado globalmente): ng
+- Docker (para construir y ejecutar la imagen)
 
 ## Instalación
 En la raíz del proyecto:
 ```sh
 npm install
 ```
-Esto instala dependencias una sola vez.
 
 ## Scripts principales
 Puedes usar `ng` o los scripts definidos en `package.json`.
@@ -78,34 +73,62 @@ npm test
 ```
 (No hay configuración de pruebas end-to-end en este proyecto actualmente, por eso se omite.)
 
-## Docker (despliegue estático)
-Construir la imagen multi-stage (Angular build + Nginx):
+## Docker
+### Estructura del Dockerfile
+Se usa multi-stage build:
+1. Stage `builder`: instala dependencias y genera el build de producción (`dist/oye-colombia/browser`).
+2. Stage `runner`: imagen base `nginx` que sirve los archivos estáticos.
+
+### Construir imagen
 ```sh
 docker build -t oye-colombia:latest .
 ```
-Ejecutar el contenedor:
+
+Si ves error de permisos ("permission denied" al conectar con `/var/run/docker.sock`), añade tu usuario al grupo docker:
+```sh
+sudo usermod -aG docker $USER
+# Cierra sesión y vuelve a entrar (o reinicia) para aplicar el cambio.
+```
+Verifica:
+```sh
+groups $USER
+```
+Debe incluir `docker`.
+
+### Ejecutar contenedor
+Modo foreground (Ctrl+C para parar):
 ```sh
 docker run --rm -p 8080:80 oye-colombia:latest
 ```
 Abrir: http://localhost:8080
 
-La configuración de Nginx (`nginx.conf`) hace fallback a `index.html` para rutas internas (SPA) y aplica caché básica a assets estáticos.
+Modo detach:
+```sh
+docker run -d --name oye-colombia -p 8080:80 oye-colombia:latest
+```
+Logs:
+```sh
+docker logs -f oye-colombia
+```
+Parar y eliminar:
+```sh
+docker stop oye-colombia && docker rm oye-colombia
+```
 
-## Estructura clave
-- Entrada aplicación: `src/main.ts`
-- Componente raíz: `src/app/app.ts`
+### Reconstruir tras cambios
+Si modificas código fuente:
+```sh
+docker build --no-cache -t oye-colombia:latest .
+```
+
+## Archivos importantes
+- App principal: `src/app/app.ts`
 - Componentes: `src/app/components/`
 - Contratos / modelos: `src/app/contracts/`
 - Datos locales: `src/assets/data/stations.json`
-- Configuración Angular CLI: `angular.json`
-- Configuración servidor estático: `nginx.conf`
-- Docker multi-stage: `Dockerfile`
-
-## Contribuir
-PRs pequeños y enfocados son bienvenidos. Recomendaciones:
-1. Crear rama descriptiva (`feat/x`, `fix/y`).
-2. Ejecutar `npm test` antes de abrir el PR.
-3. Mantener cambios mínimos (evitar formateos masivos no relacionados).
+- Configuración del CLI: `angular.json`
+- Configuración de Nginx (contenedor): `nginx.conf`
+- Dockerfile multi-stage: `Dockerfile`
 
 ## Checklist rápida antes de abrir PR
 - [ ] Compila: `ng build`
