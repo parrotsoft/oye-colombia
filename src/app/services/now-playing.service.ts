@@ -5,11 +5,18 @@ import { Station } from '../contracts/station';
 export class NowPlayingService {
   readonly current = signal<Station | null>(null);
 
-  play(station: Station): void {
+  private activeAudio: HTMLAudioElement | null = null;
+
+  play(station: Station, audio: HTMLAudioElement): void {
+    if (this.activeAudio && this.activeAudio !== audio) {
+      this.activeAudio.pause();
+    }
+    this.activeAudio = audio;
     this.current.set(station);
   }
 
   stop(): void {
+    this.activeAudio = null;
     this.current.set(null);
   }
 }

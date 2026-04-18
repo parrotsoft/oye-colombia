@@ -1,4 +1,4 @@
-import { Component, input, inject } from '@angular/core';
+import { Component, input, inject, viewChild, ElementRef } from '@angular/core';
 import { Station } from '../../contracts/station';
 import { NowPlayingService } from '../../services/now-playing.service';
 
@@ -11,11 +11,13 @@ import { NowPlayingService } from '../../services/now-playing.service';
 export class StationCardComponent {
   station = input<Station>();
 
+  private audioEl = viewChild<ElementRef<HTMLAudioElement>>('audioEl');
   private nowPlaying = inject(NowPlayingService);
 
   onPlay(): void {
     const s = this.station();
-    if (s) this.nowPlaying.play(s);
+    const audio = this.audioEl()?.nativeElement;
+    if (s && audio) this.nowPlaying.play(s, audio);
   }
 
   onPause(): void {
