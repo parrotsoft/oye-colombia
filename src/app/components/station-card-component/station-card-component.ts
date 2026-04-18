@@ -1,5 +1,6 @@
-import { Component, input } from '@angular/core';
+import { Component, input, inject } from '@angular/core';
 import { Station } from '../../contracts/station';
+import { NowPlayingService } from '../../services/now-playing.service';
 
 @Component({
   selector: 'app-station-card-component',
@@ -9,4 +10,15 @@ import { Station } from '../../contracts/station';
 })
 export class StationCardComponent {
   station = input<Station>();
+
+  private nowPlaying = inject(NowPlayingService);
+
+  onPlay(): void {
+    const s = this.station();
+    if (s) this.nowPlaying.play(s);
+  }
+
+  onPause(): void {
+    this.nowPlaying.stop();
+  }
 }

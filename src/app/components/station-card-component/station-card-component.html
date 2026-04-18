@@ -27,6 +27,9 @@
     controls
     [src]="station()?.stream"
     [title]="station()?.name + ' — en vivo'"
+    (play)="onPlay()"
+    (pause)="onPause()"
+    (ended)="onPause()"
     class="mt-4 w-full accent-indigo-600"
   ></audio>
 

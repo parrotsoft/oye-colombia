@@ -1,9 +1,67 @@
-<section aria-label="Emisoras de radio colombianas en vivo">
-  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 p-4">
-    @for (station of stations; track $index) {
-      @if (!station.stream.endsWith('.m3u8')) {
-        <app-station-card-component [station]="station"></app-station-card-component>
+<div class="flex flex-col min-h-screen">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-gradient-to-r from-yellow-400 via-red-500 to-blue-600 text-white shadow-md">
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+      <!-- Logo + título -->
+      <div class="flex items-center gap-3">
+        <img
+          src="assets/logo.png"
+          alt="OyeColombia"
+          class="w-16 h-16 rounded-full shadow-md bg-white p-1"
+        />
+        <div>
+          <h1 class="text-2xl font-bold tracking-tight">OyeColombia</h1>
+          <p class="text-sm opacity-90">Donde suena lo nuestro 🇨🇴</p>
+        </div>
+      </div>
+
+      <!-- Indicador emisora en reproducción -->
+      @if (nowPlaying.current(); as station) {
+        <div class="now-playing-badge flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/40 rounded-full px-4 py-2 shadow-lg">
+          <div class="equalizer" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <span class="hidden sm:block text-white text-sm font-semibold max-w-44 truncate leading-none">
+            {{ station.name }}
+          </span>
+        </div>
       }
-    }
-  </div>
-</section>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="flex-grow max-w-6xl mx-auto w-full p-4">
+    <section aria-label="Emisoras de radio colombianas en vivo">
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 p-4">
+        @for (station of stations; track $index) {
+          @if (!station.stream.endsWith('.m3u8')) {
+            <app-station-card-component [station]="station"></app-station-card-component>
+          }
+        }
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-300 text-sm">
+    <div
+      class="max-w-6xl mx-auto px-4 py-6 flex flex-col sm:flex-row justify-between items-center gap-4"
+    >
+      <div class="text-center sm:text-left">
+        <p class="font-semibold text-white">OyeColombia</p>
+        <p>Tu punto de encuentro con las emisoras de Colombia en el mundo.</p>
+      </div>
+      <div class="text-center sm:text-right">
+        <p>
+          Desarrollado con ❤️ por <span class="text-yellow-400 font-semibold">GotiSoft</span>
+        </p>
+        <p class="text-xs text-gray-500">
+          © 2025 Miguel Lopez Ariza. Todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
