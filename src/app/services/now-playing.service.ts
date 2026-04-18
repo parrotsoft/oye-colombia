@@ -15,8 +15,10 @@ export class NowPlayingService {
     this.current.set(station);
   }
 
-  stop(): void {
-    this.activeAudio = null;
-    this.current.set(null);
+  stop(audio: HTMLAudioElement): void {
+    if (this.activeAudio === audio) {
+      this.activeAudio = null;
+      this.current.set(null);
+    }
   }
 }

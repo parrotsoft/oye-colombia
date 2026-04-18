@@ -21,6 +21,7 @@ export class StationCardComponent {
   }
 
   onPause(): void {
-    this.nowPlaying.stop();
+    const audio = this.audioEl()?.nativeElement;
+    if (audio) this.nowPlaying.stop(audio);
   }
 }
