@@ -1,8 +1,9 @@
-import { Component, signal, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, signal, OnInit, ChangeDetectorRef, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { StationCardComponent } from './components/station-card-component/station-card-component';
 import { HttpClient } from '@angular/common/http';
 import { Station } from './contracts/station';
+import { NowPlayingService } from './services/now-playing.service';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ export class App implements OnInit {
   stations: Station[] = [];
 
   protected readonly title = signal('oye-colombia');
+  protected readonly nowPlaying = inject(NowPlayingService);
 
   constructor(
     private http: HttpClient,
@@ -39,4 +41,5 @@ export class App implements OnInit {
     });
   }
 }
+
 

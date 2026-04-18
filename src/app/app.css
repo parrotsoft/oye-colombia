@@ -1,0 +1,40 @@
+/* Ecualizador animado */
+.equalizer {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 18px;
+}
+
+.equalizer span {
+  display: block;
+  width: 3px;
+  background: white;
+  border-radius: 2px;
+  animation: eq-bar 0.9s ease-in-out infinite;
+}
+
+.equalizer span:nth-child(1) { animation-delay: 0s;     height: 6px; }
+.equalizer span:nth-child(2) { animation-delay: 0.2s;   height: 14px; }
+.equalizer span:nth-child(3) { animation-delay: 0.1s;   height: 10px; }
+.equalizer span:nth-child(4) { animation-delay: 0.3s;   height: 4px; }
+
+@keyframes eq-bar {
+  0%, 100% { transform: scaleY(0.3); }
+  50%       { transform: scaleY(1); }
+}
+
+/* Badge "now playing" con glow pulsante */
+.now-playing-badge {
+  animation: badge-glow 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes badge-glow {
+  0%, 100% {
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.6), 0 0 36px rgba(255, 220, 50, 0.35);
+  }
+}
