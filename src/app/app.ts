@@ -1,16 +1,16 @@
 import { Component, signal, OnInit, ChangeDetectorRef } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
 import { StationCardComponent } from './components/station-card-component/station-card-component';
 import { HttpClient } from '@angular/common/http';
 import { Station } from './contracts/station';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, StationCardComponent],
+  imports: [StationCardComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {
+export class App implements OnInit {
   stations: Station[] = [];
 
   protected readonly title = signal('oye-colombia');
@@ -18,7 +18,16 @@ export class App {
   constructor(
     private http: HttpClient,
     private cdr: ChangeDetectorRef,
-  ) {}
+    private titleService: Title,
+    private metaService: Meta,
+  ) {
+    this.titleService.setTitle('OyeColombia — Emisoras de Radio de Colombia en Vivo');
+    this.metaService.updateTag({
+      name: 'description',
+      content:
+        'Escucha en vivo las mejores emisoras de radio de Colombia: Caracol, W Radio, Radioactiva, Los 40, Tropicana, Olímpica y más de 30 emisoras. Gratis, sin descargas.',
+    });
+  }
 
   ngOnInit() {
     this.http.get<Station[]>('assets/data/stations.json').subscribe({
@@ -30,3 +39,4 @@ export class App {
     });
   }
 }
+

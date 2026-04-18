@@ -1,11 +1,9 @@
-<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 p-4">
-  @for (station of stations; track $index) {
-    @if (!station.stream.endsWith('.m3u8')) {
-      <app-station-card-component [station]="station"></app-station-card-component>
+<section aria-label="Emisoras de radio colombianas en vivo">
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 p-4">
+    @for (station of stations; track $index) {
+      @if (!station.stream.endsWith('.m3u8')) {
+        <app-station-card-component [station]="station"></app-station-card-component>
+      }
     }
-  }
-</div>
-
-<!--
-<router-outlet />
--->
+  </div>
+</section>
