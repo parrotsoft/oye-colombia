@@ -18,6 +18,12 @@
     "stream": "https://mdstrm.com/audio/627c1c39637d89088290f64d/live.m3u8"
   },
   {
+    "name": "Sensación Stereo (Suan)",
+    "logo": "https://cdn.instant.audio/images/logos/radios-com-co/sensacion-stereo-suan.png",
+    "api": "https://api.instant.audio/data/streams/11/sensacion-stereo-suan",
+    "stream": "https://stream.zeno.fm/pccn5qtxd5zuv"
+  },
+  {
     "name": "La Triple A Radio",
     "logo": "https://latriplearadio.com/assets/img/logo.png",
     "api": "https://api.instant.audio/data/streams/11/rcn",
